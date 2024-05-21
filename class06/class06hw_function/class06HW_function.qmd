@@ -1,0 +1,69 @@
+---
+title: "class06HW_function"
+author: Siyu Xie (PID:A16438448)
+format: pdf
+toc: true
+---
+
+## Analysis code snippet
+
+```{r}
+#install.packages("bio3d")
+```
+
+> Can you improve this analysis code?
+
+```{r}
+library(bio3d)
+s1 <- read.pdb("4AKE")  # kinase with drug
+s2 <- read.pdb("1AKE")  # kinase no drug
+s3 <- read.pdb("1E4Y")  # kinase with drug
+
+s1.chainA <- trim.pdb(s1, chain="A", elety="CA")
+s2.chainA <- trim.pdb(s2, chain="A", elety="CA")
+s3.chainA <- trim.pdb(s1, chain="A", elety="CA")
+s1.b <- s1.chainA$atom$b
+s2.b <- s2.chainA$atom$b
+s3.b <- s3.chainA$atom$b
+plotb3(s1.b, sse=s1.chainA, typ="l", ylab="Bfactor")
+plotb3(s2.b, sse=s2.chainA, typ="l", ylab="Bfactor")
+plotb3(s3.b, sse=s3.chainA, typ="l", ylab="Bfactor")
+
+
+```
+
+## Improved R function
+
+**Documentation**:
+
+**1. comments on the inputs to the function**
+
+PDB_data: the PDB file name extracted from the PDB data for analysis
+chain_name: chain interested in analysis
+
+**2. what the function does and how to use it**
+
+The function analyzes protein drug interactions by reading any protein's PDB data. To use the function, input the protein's PDB data name and the corresponding chain ID.
+
+**3. what's the output of the function**
+
+The function outputs a plot displaying the B-factor trends of the specified protein upon drug interactions.
+
+```{r}
+protein <- function(PDB_data, chain_name){
+  library(bio3d)
+# reading PDB file and trim the data
+    protein_chain <- trim.pdb(read.pdb(PDB_data), chain = chain_name, elety ="CA")
+# getting b factors from data
+    b_factor <- protein_chain$atom$b
+# plotting b factor trend for the specified protein
+    plotb3(b_factor, sse=chain_name, typ="l", ylab="Bfactor")
+}
+
+protein("4AKE", "A")
+    
+```
+
+
+
+
