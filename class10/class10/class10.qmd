@@ -138,47 +138,47 @@ aa
 ```
 
 ```{r}
-b <- blast.pdb(aa)
+#b <- blast.pdb(aa)
 ```
 
 
 ```{r}
-hits <- NULL
-hits$pdb.id <- c('1AKE_A','6S36_A','6RZE_A','3HPR_A','1E4V_A','5EJE_A','1E4Y_A','3X2S_A','6HAP_A','6HAM_A','4K46_A','3GMT_A','4PZL_A')
+#hits <- NULL
+#hits$pdb.id <- c('1AKE_A','6S36_A','6RZE_A','3HPR_A','1E4V_A','5EJE_A','1E4Y_A','3X2S_A','6HAP_A','6HAM_A','4K46_A','3GMT_A','4PZL_A')
 ```
 
 ```{r}
 # Download related PDB files
-files <- get.pdb(hits$pdb.id, path="pdbs", split=TRUE, gzip=TRUE)
+#files <- get.pdb(hits$pdb.id, path="pdbs", split=TRUE, gzip=TRUE)
 ```
 
 ```{r}
 # Align releated PDBs
-pdbs <- pdbaln(files, fit = TRUE, exefile="msa")
+#pdbs <- pdbaln(files, fit = TRUE, exefile="msa")
 ```
 
 print out the alignment!
 ```{r}
-pdbs
+#pdbs
 ```
 
 ```{r}
 # Vector containing PDB codes for figure axis
-ids <- basename.pdb(pdbs$id)
+#ids <- basename.pdb(pdbs$id)
 
 # Draw schematic alignment
-plot(pdbs, labels=ids)
+#plot(pdbs, labels=ids)
 ```
 
 
 ```{r}
 # Perform PCA
-pc.xray <- pca(pdbs)
-plot(pc.xray)
+#pc.xray <- pca(pdbs)
+#plot(pc.xray)
 ```
 
 ```{r}
 # Visualize first principal component
-pc1 <- mktrj(pc.xray, pc=1, file="pc_1.pdb")
+#pc1 <- mktrj(pc.xray, pc=1, file="pc_1.pdb")
 ```
 
