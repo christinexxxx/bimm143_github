@@ -10,5 +10,5 @@ My classwork for [BIMM143 Spring 2024] (https://bioboot.github.io/bimm143_S24/) 
 - **Class 11** [Genome informatics](class11/class11.md)
 - **class 13** [Transcriptomics and the analysis of RNA-Seq data](class13/class13/class13.md)
 - **class 14** [RNA-Seq analysis mini-project](class14/class14/class14.md)
-- **class 15** [RNA-Seq analysis mini-project]()
+- **class 18** [Mini Project: Investigating Pertussis Resurgence]()
 
