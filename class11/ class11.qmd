@@ -1,7 +1,7 @@
 ---
 title: "Class11: Genomic Informatics"
 author: "Siyu Xie (PID: A16438448)"
-format: pdf
+format: gfm
 toc: true
 ---
 
